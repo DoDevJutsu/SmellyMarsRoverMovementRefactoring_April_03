@@ -16,19 +16,22 @@ public class Rover {
             if (shouldRotateLeft(command)) {
                 rotateLeft();
             } else if (shouldRotateRight(command)) {
-                // Rotate Rover
-                if (isFacingNorth()) {
-                    direction = "E";
-                } else if (isFacingSouth()) {
-                    direction = "W";
-                } else if (isFacingWest()) {
-                    direction = "N";
-                } else {
-                    direction = "S";
-                }
+                rotateRight();
             } else {
                 displace(command);
             }
+        }
+    }
+
+    private void rotateRight() {
+        if (isFacingNorth()) {
+            direction = "E";
+        } else if (isFacingSouth()) {
+            direction = "W";
+        } else if (isFacingWest()) {
+            direction = "N";
+        } else {
+            direction = "S";
         }
     }
 
