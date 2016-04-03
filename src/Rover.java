@@ -31,15 +31,7 @@ public class Rover {
     }
 
     private void rotateLeft() {
-        if (isFacingNorth()) {
-            direction = Direction.create("W");
-        } else if (isFacingSouth()) {
-            direction = Direction.create("E");
-        } else if (isFacingWest()) {
-            direction = Direction.create("S");
-        } else {
-            direction = Direction.create("N");
-        }
+        direction = direction.rotateLeft();
     }
 
     private void displace(String command) {

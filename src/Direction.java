@@ -48,6 +48,18 @@ public class Direction {
         throw new RuntimeException("Code should not get to Direction's rotateRight!");
     }
 
+    public Direction rotateLeft() {
+        if (isNorth()) {
+            return west();
+        } else if (isSouth()) {
+            return east();
+        } else if (isWest()) {
+            return south();
+        } else {
+            return north();
+        }
+    }
+
     public boolean isWest() {
         return isWest(directionAsString);
     }
