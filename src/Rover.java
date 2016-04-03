@@ -60,19 +60,7 @@ public class Rover {
     private boolean shouldMoveForwards(String command) {
         return command.equals("f");
     }
-
-    private boolean isFacingWest() {
-        return direction.isWest();
-    }
-
-    private boolean isFacingSouth() {
-        return direction.isSouth();
-    }
-
-    private boolean isFacingNorth() {
-        return direction.isNorth();
-    }
-
+    
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
