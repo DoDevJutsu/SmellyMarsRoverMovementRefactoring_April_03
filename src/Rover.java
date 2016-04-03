@@ -14,12 +14,12 @@ public class Rover {
         for (int i = 0; i < commandsSequence.length(); ++i) {
             String command = commandsSequence.substring(i, i + 1);
             if (shouldRotateLeft(command)) {
-                vector = new LeftRotation().apply(vector);
+                commands.add(new LeftRotation());
             } else if (shouldRotateRight(command)) {
-                vector = new RightRotation().apply(vector);
+                commands.add(new RightRotation());
             } else {
                 int displacement = computeDisplacement(command);
-                vector = new Displacement(displacement).apply(vector);
+                commands.add(new Displacement(displacement));
             }
         }
 
