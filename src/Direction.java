@@ -52,6 +52,18 @@ public class Direction {
         throw new RuntimeException("Code should not get to Direction's rotateLeft!");
     }
 
+    public Coordinates displace(Coordinates coordinates, int displacement) {
+        if (isNorth()) {
+            return coordinates.add(new Coordinates(0, displacement));
+        } else if (isSouth()) {
+            return coordinates.add(new Coordinates(0, -displacement));
+        } else if (isWest()) {
+            return coordinates.add(new Coordinates(-displacement, 0));
+        } else {
+            return coordinates.add(new Coordinates(displacement, 0));
+        }
+    }
+
     public boolean isWest() {
         return isWest(directionAsString);
     }

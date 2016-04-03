@@ -46,15 +46,7 @@ public class Rover {
     }
 
     private void applyDisplacement(int displacement) {
-        if (isFacingNorth()) {
-            this.coordinates = coordinates.add(new Coordinates(0, displacement));
-        } else if (isFacingSouth()) {
-            this.coordinates = coordinates.add(new Coordinates(0, -displacement));
-        } else if (isFacingWest()) {
-            this.coordinates = coordinates.add(new Coordinates(-displacement, 0));
-        } else {
-            this.coordinates = coordinates.add(new Coordinates(displacement, 0));
-        }
+        coordinates = direction.displace(coordinates, displacement);
     }
 
     private boolean shouldRotateLeft(String command) {
