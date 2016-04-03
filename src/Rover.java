@@ -2,11 +2,13 @@ public class Rover {
     private String directionAsString;
     private int y;
     private int x;
+    private Direction direction;
 
-    public Rover(int x, int y, String direction) {
-        this.directionAsString = direction;
+    public Rover(int x, int y, String directionAsString) {
+        this.directionAsString = directionAsString;
         this.y = y;
         this.x = x;
+        this.direction = new Direction(directionAsString);
     }
 
     public void receive(String commandsSequence) {
