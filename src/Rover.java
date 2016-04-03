@@ -6,7 +6,7 @@ public class Rover {
     public Rover(int x, int y, String directionAsString) {
         this.y = y;
         this.x = x;
-        this.direction = new Direction(directionAsString);
+        this.direction = Direction.create(directionAsString);
     }
 
     public void receive(String commandsSequence) {

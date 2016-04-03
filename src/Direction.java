@@ -1,6 +1,10 @@
 public class Direction {
     private final String directionAsString;
 
+    public static Direction create(String directionAsString) {
+        return new Direction(directionAsString);
+    }
+
     public Direction(String directionAsString) {
         this.directionAsString = directionAsString;
     }
