@@ -16,19 +16,19 @@ public class Rover {
 
             if (command.equals("l") || command.equals("r")) {
                 // Rotate Rover
-                if (direction.equals("N")) {
+                if (isFacingNorth()) {
                     if (command.equals("r")) {
                         direction = "E";
                     } else {
                         direction = "W";
                     }
-                } else if (direction.equals("S")) {
+                } else if (isFacingSouth()) {
                     if (command.equals("r")) {
                         direction = "W";
                     } else {
                         direction = "E";
                     }
-                } else if (direction.equals("W")) {
+                } else if (isFacingWest()) {
                     if (command.equals("r")) {
                         direction = "N";
                     } else {
@@ -51,17 +51,29 @@ public class Rover {
                 }
                 int displacement = displacement1;
 
-                if (direction.equals("N")) {
+                if (isFacingNorth()) {
                     y += displacement;
-                } else if (direction.equals("S")) {
+                } else if (isFacingSouth()) {
                     y -= displacement;
-                } else if (direction.equals("W")) {
+                } else if (isFacingWest()) {
                     x -= displacement;
                 } else {
                     x += displacement;
                 }
             }
         }
+    }
+
+    private boolean isFacingWest() {
+        return direction.equals("W");
+    }
+
+    private boolean isFacingSouth() {
+        return direction.equals("S");
+    }
+
+    private boolean isFacingNorth() {
+        return direction.equals("N");
     }
 
     @Override
