@@ -7,6 +7,10 @@ public class Vector {
         this.direction = direction;
     }
 
+    public Vector rotateRight() {
+        return new Vector(origin, direction.rotateRight());
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

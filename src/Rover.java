@@ -8,7 +8,7 @@ public class Rover {
         this.coordinates = new Coordinates(x, y);
         this.vector = new Vector(new Coordinates(x, y), Direction.create(directionAsString));
     }
-    
+
     private void setVector(Vector vector) {
         this.direction = vector.direction;
         this.coordinates = vector.origin;
@@ -33,7 +33,7 @@ public class Rover {
     }
 
     private void rotateRight() {
-        setVector(new Vector(coordinates, direction.rotateRight()));
+        setVector(vector.rotateRight());
     }
 
     private void rotateLeft() {
