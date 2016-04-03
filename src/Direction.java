@@ -1,6 +1,4 @@
 public class Direction {
-    private final String directionAsString;
-
     public static Direction create(String directionAsString) {
         if (isNorth(directionAsString)) {
             return north();
@@ -39,15 +37,7 @@ public class Direction {
     private static boolean isNorth(String directionAsString) {
         return directionAsString.equals("N");
     }
-
-    protected Direction(String directionAsString) {
-        this.directionAsString = directionAsString;
-    }
-
-    protected Direction() {
-        this.directionAsString = "not used";
-    }
-
+    
     public Direction rotateRight() {
         throw new RuntimeException("Code should not get to Direction's rotateRight!");
     }
