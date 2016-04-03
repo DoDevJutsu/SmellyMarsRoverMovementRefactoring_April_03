@@ -2,7 +2,14 @@ public class Direction {
     private final String directionAsString;
 
     public static Direction create(String directionAsString) {
+        if (isNorth(directionAsString)) {
+            return new North("N");
+        }
         return new Direction(directionAsString);
+    }
+
+    private static boolean isNorth(String directionAsString) {
+        return directionAsString.equals("N");
     }
 
     protected Direction(String directionAsString) {
@@ -11,7 +18,7 @@ public class Direction {
 
     public Direction rotateRight() {
         if (isNorth()) {
-            return Direction.create("E");
+           throw new RuntimeException("Code should not get here!");
         } else if (isSouth()) {
             return Direction.create("W");
         } else if (isWest()) {
@@ -30,8 +37,10 @@ public class Direction {
     }
 
     public boolean isNorth() {
-        return directionAsString.equals("N");
+        return isNorth(directionAsString);
     }
+
+
 
     @Override
     public boolean equals(Object o) {
