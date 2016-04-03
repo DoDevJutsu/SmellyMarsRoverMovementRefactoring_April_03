@@ -9,6 +9,18 @@ public class Rover {
     }
 
     public void receive(String commandsSequence) {
+        List<Command> commands = createCommandsFrom(commandsSequence);
+
+        apply(commands);
+    }
+
+    private void apply(List<Command> commands) {
+        for(Command command : commands) {
+            vector = command.apply(vector);
+        }
+    }
+
+    private List<Command> createCommandsFrom(String commandsSequence) {
         List<Command> commands = new ArrayList<>();
 
         for (int i = 0; i < commandsSequence.length(); ++i) {
@@ -22,10 +34,7 @@ public class Rover {
                 commands.add(new Displacement(displacement));
             }
         }
-
-        for(Command command : commands) {
-            vector = command.apply(vector);
-        }
+        return commands;
     }
 
     private int computeDisplacement(String command) {
