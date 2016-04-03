@@ -1,12 +1,8 @@
 public class Rover {
-    private int y;
-    private int x;
     private Direction direction;
     private Coordinates coordinates;
 
     public Rover(int x, int y, String directionAsString) {
-        this.y = y;
-        this.x = x;
         this.direction = Direction.create(directionAsString);
         this.coordinates = new Coordinates(x, y);
     }
