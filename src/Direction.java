@@ -55,15 +55,11 @@ public class Direction {
     public Coordinates displace(Coordinates coordinates, int displacement) {
         throw new RuntimeException("Code should not get to Direction's displace!");
     }
-    
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Direction direction = (Direction) o;
-
-        return directionAsString != null ? directionAsString.equals(direction.directionAsString) : direction.directionAsString == null;
-
+        if (o == null) return false;
+        return getClass() == o.getClass();
     }
 }
