@@ -1,9 +1,8 @@
 public class Vector {
-    private final Coordinates origin;
-    private final Direction direction;
+    public final Coordinates origin;
+    public final Direction direction;
 
     public Vector(Coordinates origin, Direction direction) {
-
         this.origin = origin;
         this.direction = direction;
     }

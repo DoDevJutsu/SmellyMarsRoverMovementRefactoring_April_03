@@ -8,15 +8,11 @@ public class Rover {
         this.coordinates = new Coordinates(x, y);
         this.vector = new Vector(new Coordinates(x, y), Direction.create(directionAsString));
     }
-
-    private void setDirection(Direction newDirection) {
-        this.direction = newDirection;
-        this.vector = new Vector(coordinates, newDirection);
-    }
-
-    private void setCoordinates(Coordinates newCoordinates) {
-        this.coordinates = newCoordinates;
-        this.vector = new Vector(newCoordinates, direction);
+    
+    private void setVector(Vector vector) {
+        this.direction = vector.direction;
+        this.coordinates = vector.origin;
+        this.vector = vector;
     }
 
     public void receive(String commandsSequence) {
@@ -37,11 +33,11 @@ public class Rover {
     }
 
     private void rotateRight() {
-        setDirection(direction.rotateRight());
+        setVector(new Vector(coordinates, direction.rotateRight()));
     }
 
     private void rotateLeft() {
-        setDirection(direction.rotateLeft());
+        setVector(new Vector(coordinates, direction.rotateLeft()));
     }
 
     private void displace(String command) {
@@ -58,7 +54,7 @@ public class Rover {
     }
 
     private void applyDisplacement(int displacement) {
-        setCoordinates(direction.displace(coordinates, displacement));
+        setVector(new Vector(direction.displace(coordinates, displacement), direction));
     }
 
     private boolean shouldRotateLeft(String command) {
