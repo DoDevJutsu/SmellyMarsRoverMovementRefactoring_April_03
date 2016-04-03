@@ -27,7 +27,7 @@ public class Rover {
     }
 
     private void rotateLeft() {
-        vector = vector.rotateLeft();
+        vector = new LeftRotation().apply(vector);
     }
 
     private void displace(String command) {
