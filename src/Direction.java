@@ -3,13 +3,13 @@ public class Direction {
 
     public static Direction create(String directionAsString) {
         if (isNorth(directionAsString)) {
-            return new North("N");
+            return new North(directionAsString);
         } else if (isSouth(directionAsString)) {
-            return new South("S");
-        } else if(isWest(directionAsString)) {
-            return new West("W");
+            return new South(directionAsString);
+        } else if (isWest(directionAsString)) {
+            return new West(directionAsString);
         }
-        return new Direction(directionAsString);
+        return new East(directionAsString);
     }
 
     private static boolean isWest(String directionAsString) {
@@ -29,15 +29,7 @@ public class Direction {
     }
 
     public Direction rotateRight() {
-        if (isNorth()) {
-            throw new RuntimeException("Code should not get here!");
-        } else if (isSouth()) {
-            throw new RuntimeException("Code should not get here!");
-        } else if (isWest()) {
-            throw new RuntimeException("Code should not get here!");
-        } else {
-            return Direction.create("S");
-        }
+        throw new RuntimeException("Code should not get to Direction's rotateRight!");
     }
 
     public boolean isWest() {
