@@ -54,7 +54,7 @@ public class Rover {
     }
 
     private void applyDisplacement(int displacement) {
-        setVector(new Vector(direction.displace(coordinates, displacement), direction));
+        setVector(vector.displace(displacement));
     }
 
     private boolean shouldRotateLeft(String command) {

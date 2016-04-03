@@ -15,6 +15,10 @@ public class Vector {
         return new Vector(origin, direction.rotateLeft());
     }
 
+    public Vector displace(int displacement) {
+        return new Vector(direction.displace(origin, displacement), direction);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
