@@ -13,6 +13,12 @@ public class Rover {
         this.coordinates = new Coordinates(x, y);
     }
 
+    private void setCoordinates(int x, int y) {
+        this.y = y;
+        this.x = x;
+        this.coordinates = new Coordinates(x, y);
+    }
+
     public void receive(String commandsSequence) {
         for (int i = 0; i < commandsSequence.length(); ++i) {
             String command = commandsSequence.substring(i, i + 1);
@@ -53,13 +59,13 @@ public class Rover {
 
     private void applyDisplacement(int displacement) {
         if (isFacingNorth()) {
-            y += displacement;
+            setCoordinates(x, y + displacement);
         } else if (isFacingSouth()) {
-            y -= displacement;
+            setCoordinates(x, y - displacement);
         } else if (isFacingWest()) {
-            x -= displacement;
+            setCoordinates(x - displacement, y);
         } else {
-            x += displacement;
+            setCoordinates(x + displacement, y);
         }
     }
 
