@@ -42,25 +42,27 @@ public class Rover {
                     }
                 }
             } else {
-
-                // Displace Rover
-                int displacement1 = -1;
-
-                if (shouldMoveForwards(command)) {
-                    displacement1 = 1;
-                }
-                int displacement = displacement1;
-
-                if (isFacingNorth()) {
-                    y += displacement;
-                } else if (isFacingSouth()) {
-                    y -= displacement;
-                } else if (isFacingWest()) {
-                    x -= displacement;
-                } else {
-                    x += displacement;
-                }
+                displace(command);
             }
+        }
+    }
+
+    private void displace(String command) {
+        int displacement1 = -1;
+
+        if (shouldMoveForwards(command)) {
+            displacement1 = 1;
+        }
+        int displacement = displacement1;
+
+        if (isFacingNorth()) {
+            y += displacement;
+        } else if (isFacingSouth()) {
+            y -= displacement;
+        } else if (isFacingWest()) {
+            x -= displacement;
+        } else {
+            x += displacement;
         }
     }
 
