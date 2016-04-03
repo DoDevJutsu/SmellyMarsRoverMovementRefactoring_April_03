@@ -14,16 +14,7 @@ public class Rover {
             String command = commandsSequence.substring(i, i + 1);
 
             if (shouldRotateLeft(command)) {
-                // Rotate Rover
-                if (isFacingNorth()) {
-                    direction = "W";
-                } else if (isFacingSouth()) {
-                    direction = "E";
-                } else if (isFacingWest()) {
-                    direction = "S";
-                } else {
-                    direction = "N";
-                }
+                rotateLeft();
             } else if (shouldRotateRight(command)) {
                 // Rotate Rover
                 if (isFacingNorth()) {
@@ -38,6 +29,18 @@ public class Rover {
             } else {
                 displace(command);
             }
+        }
+    }
+
+    private void rotateLeft() {
+        if (isFacingNorth()) {
+            direction = "W";
+        } else if (isFacingSouth()) {
+            direction = "E";
+        } else if (isFacingWest()) {
+            direction = "S";
+        } else {
+            direction = "N";
         }
     }
 
