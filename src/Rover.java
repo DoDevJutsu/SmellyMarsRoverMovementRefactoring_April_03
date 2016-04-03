@@ -1,5 +1,4 @@
 public class Rover {
-
     private String direction;
     private int y;
     private int x;
@@ -53,10 +52,11 @@ public class Rover {
     }
 
     private int computeDisplacement(String command) {
+        final int LENGTH = 1;
         if (shouldMoveForwards(command)) {
-            return 1;
+            return LENGTH;
         }
-        return -1;
+        return -LENGTH;
     }
 
     private void applyDisplacement(int displacement) {
