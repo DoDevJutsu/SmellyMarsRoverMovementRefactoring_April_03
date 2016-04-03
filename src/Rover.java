@@ -14,6 +14,11 @@ public class Rover {
         this.vector = new Vector(coordinates, newDirection);
     }
 
+    private void setCoordinates(Coordinates newCoordinates) {
+        this.coordinates = newCoordinates;
+        this.vector = new Vector(newCoordinates, direction);
+    }
+
     public void receive(String commandsSequence) {
         for (int i = 0; i < commandsSequence.length(); ++i) {
             String command = commandsSequence.substring(i, i + 1);
@@ -53,7 +58,7 @@ public class Rover {
     }
 
     private void applyDisplacement(int displacement) {
-        coordinates = direction.displace(coordinates, displacement);
+        setCoordinates(direction.displace(coordinates, displacement));
     }
 
     private boolean shouldRotateLeft(String command) {
