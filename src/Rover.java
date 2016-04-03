@@ -14,28 +14,28 @@ public class Rover {
         for (int i = 0; i < commandsSequence.length(); ++i) {
             String command = commandsSequence.substring(i, i + 1);
 
-            if (command.equals("l") || command.equals("r")) {
+            if (shouldRotateLeft(command) || shouldRotateRight(command)) {
                 // Rotate Rover
                 if (isFacingNorth()) {
-                    if (command.equals("r")) {
+                    if (shouldRotateRight(command)) {
                         direction = "E";
                     } else {
                         direction = "W";
                     }
                 } else if (isFacingSouth()) {
-                    if (command.equals("r")) {
+                    if (shouldRotateRight(command)) {
                         direction = "W";
                     } else {
                         direction = "E";
                     }
                 } else if (isFacingWest()) {
-                    if (command.equals("r")) {
+                    if (shouldRotateRight(command)) {
                         direction = "N";
                     } else {
                         direction = "S";
                     }
                 } else {
-                    if (command.equals("r")) {
+                    if (shouldRotateRight(command)) {
                         direction = "S";
                     } else {
                         direction = "N";
@@ -46,7 +46,7 @@ public class Rover {
                 // Displace Rover
                 int displacement1 = -1;
 
-                if (command.equals("f")) {
+                if (shouldMoveForwards(command)) {
                     displacement1 = 1;
                 }
                 int displacement = displacement1;
@@ -62,6 +62,18 @@ public class Rover {
                 }
             }
         }
+    }
+
+    private boolean shouldRotateLeft(String command) {
+        return command.equals("l");
+    }
+
+    private boolean shouldRotateRight(String command) {
+        return command.equals("r");
+    }
+
+    private boolean shouldMoveForwards(String command) {
+        return command.equals("f");
     }
 
     private boolean isFacingWest() {
