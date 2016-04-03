@@ -55,20 +55,7 @@ public class Direction {
     public Coordinates displace(Coordinates coordinates, int displacement) {
         throw new RuntimeException("Code should not get to Direction's displace!");
     }
-
-    public boolean isWest() {
-        return isWest(directionAsString);
-    }
-
-    public boolean isSouth() {
-        return isSouth(directionAsString);
-    }
-
-    public boolean isNorth() {
-        return isNorth(directionAsString);
-    }
-
-
+    
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
