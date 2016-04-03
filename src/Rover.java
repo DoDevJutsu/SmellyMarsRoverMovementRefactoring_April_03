@@ -32,7 +32,7 @@ public class Rover {
 
     private void displace(String command) {
         int displacement = computeDisplacement(command);
-        applyDisplacement(displacement);
+        vector = new Displacement(displacement).apply(vector);
     }
 
     private int computeDisplacement(String command) {
@@ -41,10 +41,6 @@ public class Rover {
             return LENGTH;
         }
         return -LENGTH;
-    }
-
-    private void applyDisplacement(int displacement) {
-        vector = vector.displace(displacement);
     }
 
     private boolean shouldRotateLeft(String command) {
