@@ -1,18 +1,15 @@
 public class Rover {
-    private String directionAsString;
     private int y;
     private int x;
     private Direction direction;
 
     public Rover(int x, int y, String directionAsString) {
-        this.directionAsString = directionAsString;
         this.y = y;
         this.x = x;
         this.direction = new Direction(directionAsString);
     }
 
     private void setDirection(String directionAsString) {
-        this.directionAsString = directionAsString;
         direction = new Direction(directionAsString);
     }
 
