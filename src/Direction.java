@@ -53,15 +53,7 @@ public class Direction {
     }
 
     public Coordinates displace(Coordinates coordinates, int displacement) {
-        if (isNorth()) {
-            throw new RuntimeException("Code should not get to Direction's displace!");
-        } else if (isSouth()) {
-            throw new RuntimeException("Code should not get to Direction's displace!");
-        } else if (isWest()) {
-            throw new RuntimeException("Code should not get to Direction's displace!");
-        } else {
-            return coordinates.add(new Coordinates(displacement, 0));
-        }
+        throw new RuntimeException("Code should not get to Direction's displace!");
     }
 
     public boolean isWest() {
