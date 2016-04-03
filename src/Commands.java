@@ -17,19 +17,22 @@ public class Commands {
 
     public static Commands createCommandsFrom(String commandsSequence) {
         List<Command> commands = new ArrayList<>();
-
         for (int i = 0; i < commandsSequence.length(); ++i) {
-            String command = commandsSequence.substring(i, i + 1);
-            if (shouldRotateLeft(command)) {
-                commands.add(new LeftRotation());
-            } else if (shouldRotateRight(command)) {
-                commands.add(new RightRotation());
-            } else {
-                int displacement = computeDisplacement(command);
-                commands.add(new Displacement(displacement));
-            }
+            String commandRepresentation = commandsSequence.substring(i, i + 1);
+            commands.add(createCommand(commandRepresentation));
         }
         return new Commands(commands);
+    }
+
+    private static Command createCommand(String commandRepresentation) {
+        if (shouldRotateLeft(commandRepresentation)) {
+            return new LeftRotation();
+        } else if (shouldRotateRight(commandRepresentation)) {
+            return new RightRotation();
+        } else {
+            int displacement = computeDisplacement(commandRepresentation);
+            return new Displacement(displacement);
+        }
     }
 
     private static int computeDisplacement(String command) {
