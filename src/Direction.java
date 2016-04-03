@@ -5,6 +5,18 @@ public class Direction {
         this.directionAsString = directionAsString;
     }
 
+    public Direction rotateRight() {
+        if (isNorth()) {
+            return new Direction("E");
+        } else if (isSouth()) {
+            return new Direction("W");
+        } else if (isWest()) {
+            return new Direction("N");
+        } else {
+            return new Direction("S");
+        }
+    }
+
     public boolean isWest() {
         return directionAsString.equals("W");
     }
