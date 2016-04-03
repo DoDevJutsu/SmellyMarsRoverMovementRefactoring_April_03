@@ -23,7 +23,7 @@ public class Rover {
     }
 
     private void rotateRight() {
-        vector = vector.rotateRight();
+        vector = new RightRotation().apply(vector);
     }
 
     private void rotateLeft() {
