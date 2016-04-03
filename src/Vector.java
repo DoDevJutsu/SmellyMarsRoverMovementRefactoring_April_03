@@ -11,6 +11,10 @@ public class Vector {
         return new Vector(origin, direction.rotateRight());
     }
 
+    public Vector rotateLeft() {
+        return new Vector(origin, direction.rotateLeft());
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
