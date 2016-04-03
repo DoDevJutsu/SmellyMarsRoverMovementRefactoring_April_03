@@ -1,5 +1,3 @@
-import com.sun.xml.internal.bind.v2.runtime.Coordinator;
-
 public class Rover {
     private int y;
     private int x;
@@ -13,10 +11,8 @@ public class Rover {
         this.coordinates = new Coordinates(x, y);
     }
 
-    private void setCoordinates(int x, int y) {
-        this.y = y;
-        this.x = x;
-        this.coordinates = new Coordinates(x, y);
+    private void setCoordinates(Coordinates displacement) {
+        this.coordinates = coordinates.add(displacement);
     }
 
     public void receive(String commandsSequence) {
@@ -59,13 +55,13 @@ public class Rover {
 
     private void applyDisplacement(int displacement) {
         if (isFacingNorth()) {
-            setCoordinates(x, y + displacement);
+            setCoordinates(new Coordinates(0, displacement));
         } else if (isFacingSouth()) {
-            setCoordinates(x, y - displacement);
+            setCoordinates(new Coordinates(0, -displacement));
         } else if (isFacingWest()) {
-            setCoordinates(x - displacement, y);
+            setCoordinates(new Coordinates(-displacement, 0));
         } else {
-            setCoordinates(x + displacement, y);
+            setCoordinates(new Coordinates(displacement, 0));
         }
     }
 

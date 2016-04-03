@@ -18,4 +18,8 @@ public class Coordinates {
         return y == that.y;
 
     }
+
+    public Coordinates add(Coordinates displacement) {
+        return new Coordinates(x + displacement.x, y + displacement.y);
+    }
 }
