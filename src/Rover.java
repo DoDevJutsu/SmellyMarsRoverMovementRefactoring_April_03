@@ -11,6 +11,11 @@ public class Rover {
         this.direction = new Direction(directionAsString);
     }
 
+    private void setDirection(String directionAsString) {
+        this.directionAsString = directionAsString;
+        direction = new Direction(directionAsString);
+    }
+
     public void receive(String commandsSequence) {
         for (int i = 0; i < commandsSequence.length(); ++i) {
             String command = commandsSequence.substring(i, i + 1);
@@ -30,25 +35,25 @@ public class Rover {
 
     private void rotateRight() {
         if (isFacingNorth()) {
-            directionAsString = "E";
+            setDirection("E");
         } else if (isFacingSouth()) {
-            directionAsString = "W";
+            setDirection("W");
         } else if (isFacingWest()) {
-            directionAsString = "N";
+            setDirection("N");
         } else {
-            directionAsString = "S";
+            setDirection("S");
         }
     }
 
     private void rotateLeft() {
         if (isFacingNorth()) {
-            directionAsString = "W";
+            setDirection("W");
         } else if (isFacingSouth()) {
-            directionAsString = "E";
+            setDirection("E");
         } else if (isFacingWest()) {
-            directionAsString = "S";
+            setDirection("S");
         } else {
-            directionAsString = "N";
+            setDirection("N");
         }
     }
 
