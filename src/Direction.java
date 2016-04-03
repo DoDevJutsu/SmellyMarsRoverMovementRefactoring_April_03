@@ -49,15 +49,7 @@ public class Direction {
     }
 
     public Direction rotateLeft() {
-        if (isNorth()) {
-            throw new RuntimeException("Code should not get to Direction's rotateLeft!");
-        } else if (isSouth()) {
-            throw new RuntimeException("Code should not get to Direction's rotateLeft!");
-        } else if (isWest()) {
-            throw new RuntimeException("Code should not get to Direction's rotateLeft!");
-        } else {
-            return north();
-        }
+        throw new RuntimeException("Code should not get to Direction's rotateLeft!");
     }
 
     public boolean isWest() {
