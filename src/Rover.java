@@ -12,14 +12,17 @@ public class Rover {
     public void receive(String commandsSequence) {
         for (int i = 0; i < commandsSequence.length(); ++i) {
             String command = commandsSequence.substring(i, i + 1);
+            applyCommand(command);
+        }
+    }
 
-            if (shouldRotateLeft(command)) {
-                rotateLeft();
-            } else if (shouldRotateRight(command)) {
-                rotateRight();
-            } else {
-                displace(command);
-            }
+    private void applyCommand(String command) {
+        if (shouldRotateLeft(command)) {
+            rotateLeft();
+        } else if (shouldRotateRight(command)) {
+            rotateRight();
+        } else {
+            displace(command);
         }
     }
 
