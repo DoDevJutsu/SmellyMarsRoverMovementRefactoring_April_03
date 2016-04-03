@@ -52,7 +52,7 @@ public class Direction {
         if (isNorth()) {
             throw new RuntimeException("Code should not get to Direction's rotateLeft!");
         } else if (isSouth()) {
-            return east();
+            throw new RuntimeException("Code should not get to Direction's rotateLeft!");
         } else if (isWest()) {
             return south();
         } else {
