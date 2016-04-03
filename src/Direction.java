@@ -3,13 +3,29 @@ public class Direction {
 
     public static Direction create(String directionAsString) {
         if (isNorth(directionAsString)) {
-            return new North(directionAsString);
+            return north();
         } else if (isSouth(directionAsString)) {
-            return new South(directionAsString);
+            return south();
         } else if (isWest(directionAsString)) {
-            return new West(directionAsString);
+            return west();
         }
-        return new East(directionAsString);
+        return east();
+    }
+
+    protected static Direction east() {
+        return new East("E");
+    }
+
+    protected static Direction west() {
+        return new West("W");
+    }
+
+    protected static Direction south() {
+        return new South("S");
+    }
+
+    protected static Direction north() {
+        return new North("N");
     }
 
     private static boolean isWest(String directionAsString) {

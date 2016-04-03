@@ -4,6 +4,6 @@ public class South extends Direction {
     }
 
     public Direction rotateRight() {
-        return Direction.create("W");
+        return west();
     }
 }

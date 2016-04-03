@@ -4,6 +4,6 @@ public class East extends Direction {
     }
 
     public Direction rotateRight() {
-        return Direction.create("S");
+        return south();
     }
 }
