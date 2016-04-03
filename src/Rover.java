@@ -32,13 +32,13 @@ public class Rover {
 
     private void rotateLeft() {
         if (isFacingNorth()) {
-            direction = new Direction("W");
+            direction = Direction.create("W");
         } else if (isFacingSouth()) {
-            direction = new Direction("E");
+            direction = Direction.create("E");
         } else if (isFacingWest()) {
-            direction = new Direction("S");
+            direction = Direction.create("S");
         } else {
-            direction = new Direction("N");
+            direction = Direction.create("N");
         }
     }
 
