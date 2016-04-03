@@ -15,27 +15,26 @@ public class Commands {
         return vector;
     }
 
-    public static Commands createCommandsFrom(String commandsSequence) {
+    public static Commands createCommandsFrom(String sequence) {
         List<Command> commands = new ArrayList<>();
-        for (int i = 0; i < commandsSequence.length(); ++i) {
-            String commandRepresentation = commandsSequence.substring(i, i + 1);
-            commands.add(createCommand(commandRepresentation));
+        for (int i = 0; i < sequence.length(); ++i) {
+            String representation = sequence.substring(i, i + 1);
+            commands.add(createCommand(representation));
         }
         return new Commands(commands);
     }
 
-    private static Command createCommand(String commandRepresentation) {
-        if (shouldRotateLeft(commandRepresentation)) {
+    private static Command createCommand(String representation) {
+        if (isLeftRotation(representation)) {
             return new LeftRotation();
-        } else if (shouldRotateRight(commandRepresentation)) {
+        } else if (isRightRotation(representation)) {
             return new RightRotation();
         } else {
-            int displacement = computeDisplacement(commandRepresentation);
-            return new Displacement(displacement);
+            return new Displacement(getLength(representation));
         }
     }
 
-    private static int computeDisplacement(String command) {
+    private static int getLength(String command) {
         final int LENGTH = 1;
         if (shouldMoveForwards(command)) {
             return LENGTH;
@@ -43,11 +42,11 @@ public class Commands {
         return -LENGTH;
     }
 
-    private static boolean shouldRotateLeft(String command) {
+    private static boolean isLeftRotation(String command) {
         return command.equals("l");
     }
 
-    private static boolean shouldRotateRight(String command) {
+    private static boolean isRightRotation(String command) {
         return command.equals("r");
     }
 
