@@ -53,12 +53,10 @@ public class Rover {
     }
 
     private int computeDisplacement(String command) {
-        int displacement1 = -1;
-
         if (shouldMoveForwards(command)) {
-            displacement1 = 1;
+            return 1;
         }
-        return displacement1;
+        return -1;
     }
 
     private void applyDisplacement(int displacement) {
