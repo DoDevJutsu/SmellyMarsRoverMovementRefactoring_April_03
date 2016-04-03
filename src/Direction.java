@@ -1,4 +1,8 @@
-public class Direction {
+abstract public class Direction {
+    abstract public Direction rotateRight();
+    abstract public Direction rotateLeft();
+    abstract public Coordinates displace(Coordinates coordinates, int displacement);
+
     public static Direction create(String directionAsString) {
         if (isNorth(directionAsString)) {
             return north();
@@ -36,18 +40,6 @@ public class Direction {
 
     private static boolean isNorth(String directionAsString) {
         return directionAsString.equals("N");
-    }
-    
-    public Direction rotateRight() {
-        throw new RuntimeException("Code should not get to Direction's rotateRight!");
-    }
-
-    public Direction rotateLeft() {
-        throw new RuntimeException("Code should not get to Direction's rotateLeft!");
-    }
-
-    public Coordinates displace(Coordinates coordinates, int displacement) {
-        throw new RuntimeException("Code should not get to Direction's displace!");
     }
 
     @Override
