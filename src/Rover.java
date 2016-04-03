@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class Rover {
     private Vector vector;
 
@@ -9,52 +6,8 @@ public class Rover {
     }
 
     public void receive(String commandsSequence) {
-        List<Command> commands = createCommandsFrom(commandsSequence);
-
-        apply(commands);
-    }
-
-    private void apply(List<Command> commands) {
-        for(Command command : commands) {
-            vector = command.apply(vector);
-        }
-    }
-
-    private List<Command> createCommandsFrom(String commandsSequence) {
-        List<Command> commands = new ArrayList<>();
-
-        for (int i = 0; i < commandsSequence.length(); ++i) {
-            String command = commandsSequence.substring(i, i + 1);
-            if (shouldRotateLeft(command)) {
-                commands.add(new LeftRotation());
-            } else if (shouldRotateRight(command)) {
-                commands.add(new RightRotation());
-            } else {
-                int displacement = computeDisplacement(command);
-                commands.add(new Displacement(displacement));
-            }
-        }
-        return commands;
-    }
-
-    private int computeDisplacement(String command) {
-        final int LENGTH = 1;
-        if (shouldMoveForwards(command)) {
-            return LENGTH;
-        }
-        return -LENGTH;
-    }
-
-    private boolean shouldRotateLeft(String command) {
-        return command.equals("l");
-    }
-
-    private boolean shouldRotateRight(String command) {
-        return command.equals("r");
-    }
-
-    private boolean shouldMoveForwards(String command) {
-        return command.equals("f");
+        Commands commands = Commands.createCommandsFrom(commandsSequence);
+        vector = commands.apply(vector);
     }
 
     @Override
