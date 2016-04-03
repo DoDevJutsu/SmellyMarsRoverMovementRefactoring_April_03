@@ -13,19 +13,19 @@ public class Direction {
     }
 
     protected static Direction east() {
-        return new East("E");
+        return new East();
     }
 
     protected static Direction west() {
-        return new West("W");
+        return new West();
     }
 
     protected static Direction south() {
-        return new South("S");
+        return new South();
     }
 
     protected static Direction north() {
-        return new North("N");
+        return new North();
     }
 
     private static boolean isWest(String directionAsString) {
@@ -42,6 +42,10 @@ public class Direction {
 
     protected Direction(String directionAsString) {
         this.directionAsString = directionAsString;
+    }
+
+    protected Direction() {
+        this.directionAsString = "not used";
     }
 
     public Direction rotateRight() {
