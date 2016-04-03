@@ -50,7 +50,7 @@ public class Direction {
 
     public Direction rotateLeft() {
         if (isNorth()) {
-            return west();
+            throw new RuntimeException("Code should not get to Direction's rotateLeft!");
         } else if (isSouth()) {
             return east();
         } else if (isWest()) {
