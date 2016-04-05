@@ -15,11 +15,11 @@ public class Commands {
         return vector;
     }
 
-    public static Commands createCommandsFrom(String sequence) {
+    public static Commands createFrom(String sequence) {
         List<Command> commands = new ArrayList<>();
         for (int i = 0; i < sequence.length(); ++i) {
             String representation = sequence.substring(i, i + 1);
-            commands.add(CommandFactory.create(representation));
+            commands.add(CommandInterpreter.interpret(representation));
         }
         return new Commands(commands);
     }

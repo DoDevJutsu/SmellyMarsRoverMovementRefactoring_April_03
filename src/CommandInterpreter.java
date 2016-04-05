@@ -2,14 +2,14 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CommandFactory {
+public class CommandInterpreter {
     private static final String FORWARDS_DISPLACEMENT = "f";
     private static final String BACKWARDS_DISPLACEMENT = "b";
     private static final String LEFT_ROTATION = "l";
     private static final String RIGHT_ROTATION = "r";
     private static Map<String, Command> knownCommands = knownCommands();
 
-    public static Command create(String representation) {
+    public static Command interpret(String representation) {
         if (!knownCommands.containsKey(representation)) {
             return new UnknownCommand();
         }
