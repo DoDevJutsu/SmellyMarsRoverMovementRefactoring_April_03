@@ -9,6 +9,7 @@ class Displacement implements Command {
         this.displacement = displacement;
     }
 
+    @Override
     public Vector apply(Vector vector) {
         return vector.displace(displacement);
     }
