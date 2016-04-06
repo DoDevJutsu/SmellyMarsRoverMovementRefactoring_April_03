@@ -30,5 +30,13 @@ public class Vector {
 
         if (origin != null ? !origin.equals(vector.origin) : vector.origin != null) return false;
         return direction != null ? direction.equals(vector.direction) : vector.direction == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = origin != null ? origin.hashCode() : 0;
+        result = 31 * result + (direction != null ? direction.hashCode() : 0);
+        return result;
     }
 }

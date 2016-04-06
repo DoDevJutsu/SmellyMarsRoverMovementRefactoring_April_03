@@ -31,4 +31,9 @@ public class Rover {
         return vector != null ? vector.equals(rover.vector) : rover.vector == null;
 
     }
+
+    @Override
+    public int hashCode() {
+        return vector != null ? vector.hashCode() : 0;
+    }
 }
