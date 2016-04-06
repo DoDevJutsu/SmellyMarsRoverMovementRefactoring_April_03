@@ -5,11 +5,11 @@ import com.dodevjutsu.rover.Direction;
 
 public class East extends Direction {
     public Direction rotateRight() {
-        return Direction.south();
+        return south();
     }
 
     public Direction rotateLeft() {
-        return Direction.north();
+        return north();
     }
 
     public Coordinates displace(Coordinates coordinates, int displacement) {
