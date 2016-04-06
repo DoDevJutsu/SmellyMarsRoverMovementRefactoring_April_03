@@ -1,3 +1,7 @@
+package com.dodevjutsu.rover;
+
+import com.dodevjutsu.rover.commands.Commands;
+
 public class Rover {
     private Vector vector;
 

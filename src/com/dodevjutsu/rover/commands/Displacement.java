@@ -1,4 +1,8 @@
-public class Displacement implements Command {
+package com.dodevjutsu.rover.commands;
+
+import com.dodevjutsu.rover.Vector;
+
+class Displacement implements Command {
     private int displacement;
 
     public Displacement(int displacement) {

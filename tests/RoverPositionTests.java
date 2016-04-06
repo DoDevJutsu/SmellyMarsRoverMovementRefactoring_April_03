@@ -1,5 +1,6 @@
 import static org.junit.Assert.*;
 
+import com.dodevjutsu.rover.Rover;
 import org.junit.Test;
 
 public class RoverPositionTests {

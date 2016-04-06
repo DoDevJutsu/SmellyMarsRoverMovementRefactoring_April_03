@@ -1,3 +1,5 @@
+package com.dodevjutsu.rover;
+
 public class Coordinates {
     private final int x;
     private final int y;
@@ -5,6 +7,10 @@ public class Coordinates {
     public Coordinates(int x, int y) {
         this.x = x;
         this.y = y;
+    }
+
+    public Coordinates add(Coordinates displacement) {
+        return new Coordinates(x + displacement.x, y + displacement.y);
     }
 
     @Override
@@ -17,9 +23,5 @@ public class Coordinates {
         if (x != that.x) return false;
         return y == that.y;
 
-    }
-
-    public Coordinates add(Coordinates displacement) {
-        return new Coordinates(x + displacement.x, y + displacement.y);
     }
 }

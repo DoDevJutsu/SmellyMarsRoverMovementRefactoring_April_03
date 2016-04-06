@@ -1,3 +1,5 @@
+package com.dodevjutsu.rover;
+
 public class Vector {
     private final Coordinates origin;
     private final Direction direction;

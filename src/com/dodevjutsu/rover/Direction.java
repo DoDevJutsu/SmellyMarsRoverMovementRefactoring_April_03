@@ -1,3 +1,10 @@
+package com.dodevjutsu.rover;
+
+import com.dodevjutsu.rover.directions.East;
+import com.dodevjutsu.rover.directions.North;
+import com.dodevjutsu.rover.directions.South;
+import com.dodevjutsu.rover.directions.West;
+
 abstract public class Direction {
     abstract public Direction rotateRight();
     abstract public Direction rotateLeft();

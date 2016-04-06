@@ -1,8 +1,10 @@
+package com.dodevjutsu.rover.commands;
+
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CommandInterpreter {
+class CommandInterpreter {
     private static final String FORWARDS_DISPLACEMENT = "f";
     private static final String BACKWARDS_DISPLACEMENT = "b";
     private static final String LEFT_ROTATION = "l";

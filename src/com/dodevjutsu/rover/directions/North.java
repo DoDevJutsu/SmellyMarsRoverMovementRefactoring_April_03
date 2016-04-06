@@ -1,3 +1,8 @@
+package com.dodevjutsu.rover.directions;
+
+import com.dodevjutsu.rover.Coordinates;
+import com.dodevjutsu.rover.Direction;
+
 public class North extends Direction {
     public Direction rotateRight() {
         return east();
